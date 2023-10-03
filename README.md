@@ -51,7 +51,9 @@ Diversas portas precisam estar abertas para que os componentes do Kubernetes se 
 Dito que essas portas podem diferir dependendo do plugin, por favor leia a documentação dos plugins sobre quais portas serão necessárias abrir.
      
 <br>
+
 #### Desativar a swap
+
 Desative a troca em todos os nós.
 Para que o kubelet funcione sem problemas, é recomendável desabilitar a troca. Execute os comandos a seguir nos nós mestre e do trabalhador para desativar a troca.
 
@@ -60,7 +62,9 @@ sudo swapoff -a
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 ```
 <br>
+
 ### Fazendo com que o iptables enxergue o tráfego agregado
+
 Referência: 
 https://kubernetes.io/pt-br/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
@@ -107,6 +111,7 @@ Referência:
 
 
 #### Docker engine
+
     sudo apt-get update
     sudo apt-get install -y apt-transport-https ca-certificates curl gnupg
 
@@ -116,6 +121,7 @@ Referência:
 <br>
 
 #### cgroup drivers
+
 Referência:
  https://kubernetes.io/docs/setup/production-environment/container-runtimes/
 
@@ -137,6 +143,7 @@ systemctl restart containerd
 <br><br>
 
 #### Kubeadm
+
 Agora, a próxima etapa é adicionar a chave Kubernetes a ambos os nós, fazemos isso com o seguinte comando:
 ```shell
 sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/kubernetes-archive-keyring.gpg
@@ -176,6 +183,7 @@ Agora, estamos prontos para criar o cluster Kubernetes!
 <br><br>
 
 #### Iniciando o Cluster
+
 Referência:
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
 https://computingforgeeks.com/install-kubernetes-cluster-on-debian-12-bookworm/#google_vignette
@@ -238,6 +246,7 @@ kubeadm join master01.local:6443 --token 32zo2e.rfcsfw70e40a3d6d \
 <br><br>
 
 ###### Atenção!
+
 Guarde a linha:
 
 ```
@@ -266,6 +275,7 @@ Confirme se está tudo ok:
 <br><br><br><br>
 
 ##### Configurando o POD Network
+
 Referência:
  https://kubernetes.io/pt-br/docs/concepts/cluster-administration/networking/
 
@@ -298,7 +308,9 @@ Para mais informações: [Antrea](https://antrea.io/docs/v1.12.1/docs/service-lo
 
 
 <br><br><br><br>
+
 #### Configurando os Nodes Workers
+
 Os worker nodes possuem quase as mesmas dependências em relação ao control-plane. Isso significa que será necessário:
 
 - [x] desabilitar o swap
