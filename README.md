@@ -2,10 +2,7 @@
 
 ## Introdução
 >[!NOTE]
->
->This is a standard NOTE block.
-
-> O Kubernetes é uma plataforma de código aberto para automação, orquestração e gerenciamento de contêineres.
+>This is a standard NOTE block. O Kubernetes é uma plataforma de código aberto para automação, orquestração e gerenciamento de contêineres.
 
 Ele simplifica a implantação e o dimensionamento de aplicativos em contêineres, fornecendo recursos como:
 
