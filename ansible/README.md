@@ -26,5 +26,5 @@ kubeadm config images pull
 kubeadm init --control-plane-endpoint=<IP ou FQDN MASTER> --pod-network-cidr=10.244.0.0/16 | tee kubeadm.init.out
 ```
 
-Insira os nodes workers no cluster:
+Insira os nodes workers no cluster:<br>
 ```ansible-playbook k8s-join_worker.yml -k -K```
